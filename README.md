@@ -1,5 +1,7 @@
 # YouTube Downloader
 
+![YouTube](assets/youtube.jpg)
+
 Downloads YouTube videos from a URL list as `.mp4` files. Tries web → android → ios extractor clients to get the best available quality (4K VP9/AV1 where available).
 
 ## Requirements
