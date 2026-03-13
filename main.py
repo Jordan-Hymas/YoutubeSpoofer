@@ -12,7 +12,7 @@ OUTPUT_DIR     = os.path.join(_BASE, 'media', 'output')     # final destination
 URL_FILE       = os.path.join(_BASE, 'urls.txt')
 MAX_DOWNLOADS   = 10
 COOKIES_FILE    = os.path.join(_BASE, 'cookies.txt')  # export once: see README
-COOKIES_BROWSER = "chrome"                            # fallback if cookies.txt not found
+COOKIES_BROWSER = "firefox"                           # fallback if cookies.txt not found
 
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -43,6 +43,7 @@ def run_yt_dlp(url: str, output_path: str) -> int:
         '--no-playlist',
         '--retry-sleep', '2',
         '--concurrent-fragments', '4',
+        '--js-runtimes', 'deno',
     ]
     base_cmd.extend(_cookie_args())
     base_cmd.append(url)
